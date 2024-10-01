@@ -13,17 +13,17 @@ public class UserController {
     }
 
     @PostMapping("/users/join")
-    private User findUserById(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("nickname") String nickname) {
+    public User findUserById(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("nickname") String nickname) {
         return userService.saveUser(username, password, nickname);
     }
 
     @GetMapping("/users/id/{id}")
-    private User findUserById(@PathVariable("id") Long id) {
+    public User findUserById(@PathVariable("id") Long id) {
         return userService.findUserById(id);
     }
 
     @GetMapping("/users/username/{username}")
-    private User findUserByUsername(@PathVariable("username") String username) {
+    public User findUserByUsername(@PathVariable("username") String username) {
         return userService.findUserByUsername(username);
     }
 
